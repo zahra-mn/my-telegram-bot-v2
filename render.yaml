@@ -1,0 +1,11 @@
+services:
+  - type: backgroundWorker
+    name: my-smart-bot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot.py"
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        fromSecret: true
+      - key: HUGGINGFACE_API_KEY
+        fromSecret: true
